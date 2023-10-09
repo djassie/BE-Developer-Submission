@@ -21,3 +21,5 @@ production id, product ID, price, manufactured datetime, description, category (
 ### Create roles and attach to content types such that, no one can edit/delete other departments' data, the view can be public.
 
 ### Add-on [Nice to do]: create a workflow for sending emails to the sales head when a new quote is generated from sales team.
+
+## When you are done, send the code/configuration to the shared email id, a wetransfer/dropbox/googledrive link.
