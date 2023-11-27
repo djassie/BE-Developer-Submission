@@ -1,0 +1,23 @@
+uuid: b28bc239-07df-4e71-baee-f8ee860ed99c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_id
+    - node.type.production
+id: node.production.field_product_id
+field_name: field_product_id
+entity_type: node
+bundle: production
+label: 'product ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

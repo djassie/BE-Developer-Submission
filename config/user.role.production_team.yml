@@ -1,0 +1,21 @@
+uuid: 7121bd76-087c-47d4-9f1d-73f7d8280e73
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.production
+  module:
+    - node
+id: production_team
+label: 'Production Team'
+weight: 8
+is_admin: null
+permissions:
+  - 'create production content'
+  - 'delete any production content'
+  - 'delete own production content'
+  - 'delete production revisions'
+  - 'edit any production content'
+  - 'edit own production content'
+  - 'revert production revisions'
+  - 'view production revisions'

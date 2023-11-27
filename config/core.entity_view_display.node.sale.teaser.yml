@@ -1,0 +1,36 @@
+uuid: 99d33488-c96c-4525-a35d-e806de391f6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.sale.body
+    - field.field.node.sale.field_price
+    - field.field.node.sale.field_product_id
+    - field.field.node.sale.field_tax
+    - node.type.sale
+  module:
+    - text
+    - user
+id: node.sale.teaser
+targetEntityType: node
+bundle: sale
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_price: true
+  field_product_id: true
+  field_tax: true

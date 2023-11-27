@@ -1,0 +1,24 @@
+uuid: d8232991-01af-435c-9019-5441678d4c63
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.sale
+  module:
+    - text
+id: node.sale.body
+field_name: body
+entity_type: node
+bundle: sale
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

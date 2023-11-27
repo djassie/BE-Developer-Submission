@@ -1,0 +1,21 @@
+uuid: 66d3cde9-2109-4e14-9bc9-2a491dc8945b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sale
+  module:
+    - node
+id: sales_team
+label: 'Sales Team'
+weight: 7
+is_admin: null
+permissions:
+  - 'create sale content'
+  - 'delete any sale content'
+  - 'delete own sale content'
+  - 'delete sale revisions'
+  - 'edit any sale content'
+  - 'edit own sale content'
+  - 'revert sale revisions'
+  - 'view sale revisions'

@@ -1,0 +1,20 @@
+uuid: fb318112-66b5-4902-9520-68fedd00a8e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_manufactured_datetime
+field_name: field_manufactured_datetime
+entity_type: node
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

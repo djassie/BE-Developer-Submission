@@ -1,0 +1,14 @@
+uuid: cc3279e7-3aa7-4fcd-b87d-d63a34d3fcff
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.sales_head
+  module:
+    - user
+id: user_remove_role_action.sales_head
+label: 'Remove the Sales Head role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: sales_head

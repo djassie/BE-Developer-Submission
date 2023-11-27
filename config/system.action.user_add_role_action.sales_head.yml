@@ -1,0 +1,14 @@
+uuid: b9a6eba3-5f27-4545-9194-aae1f6caacd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.sales_head
+  module:
+    - user
+id: user_add_role_action.sales_head
+label: 'Add the Sales Head role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: sales_head

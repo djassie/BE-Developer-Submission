@@ -1,0 +1,8 @@
+uuid: 58f38b0b-fafc-46df-b1e3-6a05028bce20
+langcode: en
+status: true
+dependencies: {  }
+name: Category
+vid: category
+description: 'Category: To be used with Product'
+weight: 0

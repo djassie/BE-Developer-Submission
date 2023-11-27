@@ -1,0 +1,20 @@
+uuid: b1742ecf-8808-43eb-89b2-7a5a1de632b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_product_id
+field_name: field_product_id
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

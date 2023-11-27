@@ -1,0 +1,62 @@
+uuid: d19a2038-2dea-4ce5-8c8d-4b0ad56d717e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.sale.body
+    - field.field.node.sale.field_price
+    - field.field.node.sale.field_product_id
+    - field.field.node.sale.field_tax
+    - node.type.sale
+  module:
+    - text
+    - user
+id: node.sale.default
+targetEntityType: node
+bundle: sale
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_price:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_product_id:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_tax:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

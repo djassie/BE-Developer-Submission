@@ -1,0 +1,23 @@
+uuid: d77dbb66-8b43-4b74-ab5f-25f15fd38529
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tax
+    - node.type.sale
+id: node.sale.field_tax
+field_name: field_tax
+entity_type: node
+bundle: sale
+label: tax
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

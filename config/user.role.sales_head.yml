@@ -1,0 +1,21 @@
+uuid: 55b2e87d-00f6-4f2d-a995-81d8ab154b73
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sale
+  module:
+    - node
+id: sales_head
+label: 'Sales Head'
+weight: 4
+is_admin: null
+permissions:
+  - 'create sale content'
+  - 'delete any sale content'
+  - 'delete own sale content'
+  - 'delete sale revisions'
+  - 'edit any sale content'
+  - 'edit own sale content'
+  - 'revert sale revisions'
+  - 'view sale revisions'
