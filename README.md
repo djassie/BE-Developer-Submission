@@ -23,6 +23,9 @@ production id, product ID, price, manufactured datetime, description, category (
 #### Create views for all the above content types where records can be listed with option to sort by creation date, name, price etc. Add a range filter to drill down records created between certain dates and a category filter for the Production list view page
 
 
-#### Add-on [Nice to do]: create a workflow for sending emails to the sales head when a new quote is generated from sales team.
+#### On new Sales quote creation or update of existing sales content, email sent to Sales Head
+- New Quote
+
+- Update Quote
 
 #### configuration added to config folder or can be imported from db1.tar.gz file as well.
