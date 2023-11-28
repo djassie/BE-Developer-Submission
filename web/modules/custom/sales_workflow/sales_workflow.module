@@ -36,7 +36,6 @@ use Drupal\Node\NodeInterface;
   foreach($users as $user){
     \Drupal::service('email_factory')->sendTypedEmail('sales_email_update', 'update', $user, $node);
   }
-  // \Drupal::service('email_factory')->sendTypedEmail('sales_email_update', 'update', $users);
 
   \Drupal::messenger()->addMessage("Sent emails to Sales Head");
 
