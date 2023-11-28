@@ -23,9 +23,6 @@ class SalesEmailBuilder extends EmailBuilderBase {
   use TokenProcessorTrait;
 
   public function createParams(EmailInterface $email, UserInterface $user = NULL, NodeInterface $node = NULL) {
-    // if ($to) {
-    //   $email->setParam('to', $to);
-    // }
     assert($user != NULL);
     assert($node != NULL);
     if ($user) {
@@ -40,18 +37,14 @@ class SalesEmailBuilder extends EmailBuilderBase {
    * {@inheritdoc}
    */
   public function build(EmailInterface $email) {
-    // if ($to = $email->getParam('to')) {
-    //   $email->setTo($to);
-    // }
     $user = $email->getParam('user_entity');
     $node = $email->getParam('node_entity');
-    // $user = \Drupal::currentUser();
+
     $email->setTo($user->getEmail())
       ->setBodyEntity($node, 'email')
       ->setVariable('userName', $user->getAccountName())
       ->setVariable('contentUrl', $node->toUrl()->toString())
       ->setVariable('contentTitle', $node->getTitle());
-    // $email->setVariable('userName', $user->getAccountName());
   }
 
 }

@@ -33,18 +33,11 @@ use Drupal\Node\NodeInterface;
   ->execute();
   $users = User::loadMultiple($ids);
 
-  // $query = \Drupal::database()->select('users_field_data', 'ufd');
-  // $query->addField('ufd', 'name');
-  // $query->addField('ufd', 'mail');
-  // $query->condition('ufd.status', 1);
-  // $usersLoaded = $query->execute()->fetchAll();
-
-  // $to = \Drupal::currentUser()->getEmail();
   foreach($users as $user){
     \Drupal::service('email_factory')->sendTypedEmail('sales_email_update', 'update', $user, $node);
   }
   // \Drupal::service('email_factory')->sendTypedEmail('sales_email_update', 'update', $users);
 
-  \Drupal::messenger()->addMessage("Sent email to current user");
+  \Drupal::messenger()->addMessage("Sent emails to Sales Head");
 
   }
