@@ -21,21 +21,22 @@ use Drupal\Node\NodeInterface;
   */
 
   function sales_workflow_node_presave(NodeInterface $node){
+    $ids = \Drupal::entityQuery('user')
+      ->accessCheck(TRUE)
+      ->condition('status', 1)
+      ->condition('roles', 'sales_head')
+      ->execute();
+   $users = User::loadMultiple($ids);
+
     if($node->isNew()){
-      $to = \Drupal::currentUser()->getEmail();
-      \Drupal::service('email_factory')->sendTypedEmail('sales_email_update', 'new', $to);
+      foreach($users as $user){
+        \Drupal::service('email_factory')->sendTypedEmail('sales_email_update', 'new', $user, $node);
+      }
+    }else{
+      foreach($users as $user){
+        \Drupal::service('email_factory')->sendTypedEmail('sales_email_update', 'update', $user, $node);
+      }
     }
-
-  $ids = \Drupal::entityQuery('user')
-  ->accessCheck(TRUE)
-  ->condition('status', 1)
-  ->condition('roles', 'sales_head')
-  ->execute();
-  $users = User::loadMultiple($ids);
-
-  foreach($users as $user){
-    \Drupal::service('email_factory')->sendTypedEmail('sales_email_update', 'update', $user, $node);
-  }
 
   \Drupal::messenger()->addMessage("Sent emails to Sales Head");
 
