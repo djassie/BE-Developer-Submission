@@ -20,7 +20,7 @@ use Drupal\node\NodeInterface;
  */
 class SalesEmailBuilder extends EmailBuilderBase {
 
-  use TokenProcessorTrait;
+  // use TokenProcessorTrait;
 
   public function createParams(EmailInterface $email, UserInterface $user = NULL, NodeInterface $node = NULL) {
     assert($user != NULL);

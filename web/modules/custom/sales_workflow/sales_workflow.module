@@ -11,10 +11,20 @@ use Drupal\Node\NodeInterface;
  /**
   * Implements hook_node_insert()
   */
-  // function sales_workflow_node_insert(){
-  //   $to = \Drupal::currentUser()->getEmail();
-  // \Drupal::service('email_factory')->sendTypedEmail('sales_email_update', 'new', $to);
-  // }
+  function sales_workflow_node_insert(NodeInterface $node){
+
+   $ids = \Drupal::entityQuery('user')
+    ->accessCheck(TRUE)
+    ->condition('status', 1)
+    ->condition('roles', 'sales_head')
+    ->execute();
+   $users = User::loadMultiple($ids);
+
+   foreach($users as $user){
+    \Drupal::service('email_factory')->sendTypedEmail('sales_email_update', 'new', $user, $node);
+   }
+   \Drupal::messenger()->addMessage("Sent Quote Generation emails to Sales Head");
+  }
 
  /**
   * Implements hook_node_presave
@@ -28,16 +38,11 @@ use Drupal\Node\NodeInterface;
       ->execute();
    $users = User::loadMultiple($ids);
 
-    if($node->isNew()){
-      foreach($users as $user){
-        \Drupal::service('email_factory')->sendTypedEmail('sales_email_update', 'new', $user, $node);
-      }
-    }else{
+    if($node->isNew() == false){
       foreach($users as $user){
         \Drupal::service('email_factory')->sendTypedEmail('sales_email_update', 'update', $user, $node);
       }
+      \Drupal::messenger()->addMessage("Sent Quote Update emails to Sales Head");
     }
-
-  \Drupal::messenger()->addMessage("Sent emails to Sales Head");
 
   }
