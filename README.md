@@ -24,8 +24,10 @@ production id, product ID, price, manufactured datetime, description, category (
 
 
 #### On new Sales quote creation or update of existing sales content, email sent to Sales Head
+- Emails
+![Image](images/Screenshot%20from%202023-11-28%2014-38-12.png "Sales View")
 - New Quote
-
+![Image](images/Screenshot%20from%202023-11-28%2016-39-47.png "New Quote Email")
 - Update Quote
-
+![Image](images/Screenshot%20from%202023-11-28%2016-39-52.png "Quote Update Email")
 #### configuration added to config folder or can be imported from db1.tar.gz file as well.
