@@ -1,0 +1,21 @@
+uuid: 4dea3640-47d6-4c27-beca-77b65fc73928
+langcode: en
+status: true
+dependencies:
+  module:
+    - sales_workflow
+_core:
+  default_config_hash: XBOa-x-7BqKO_T0M8efic4-tPC-Ks0i-oU7N9LA7CKc
+id: sales_email_update.update
+configuration:
+  email_body:
+    content:
+      value: |-
+        <h4>Quote updated</h4>
+        <p>Hello {{ userName }}</p>
+        <p>This is to notify you that new Sales Quote <a href="{{ contentUrl }}">{{ contentTitle }}</a> has been updated.</p>
+        <p>Regards,</p>
+        <p>Sales Team</p>
+      format: email_html
+  email_subject:
+    value: 'Sales Quote updated {{ contentTitle }}'

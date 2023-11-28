@@ -1,0 +1,5 @@
+name: 'Sales Workflow'
+type: module
+description: 'Workflow to send email with Sales Head role upon new sales quote generation'
+package: Sales Workflow
+core_version_requirement: ^9 || ^10

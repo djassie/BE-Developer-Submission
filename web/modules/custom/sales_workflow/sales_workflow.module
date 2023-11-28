@@ -1,0 +1,40 @@
+<?php
+
+use Drupal\user\Entity\User;
+use Drupal\Node\NodeInterface;
+
+/**
+ * @file
+ * Primary module hooks for node workflow module.
+ */
+
+ /**
+  * Implements hook_node_insert()
+  */
+  // function sales_workflow_node_insert(){
+  //   $to = \Drupal::currentUser()->getEmail();
+  // \Drupal::service('email_factory')->sendTypedEmail('sales_email_update', 'new', $to);
+  // }
+
+ /**
+  * Implements hook_node_presave
+  */
+
+  function sales_workflow_node_presave(NodeInterface $node){
+    if($node->isNew()){
+      $to = \Drupal::currentUser()->getEmail();
+      \Drupal::service('email_factory')->sendTypedEmail('sales_email_update', 'new', $to);
+    }
+
+  $query = \Drupal::database()->select('users_field_data', 'ufd');
+  $query->addField('ufd', 'name');
+  $query->addField('ufd', 'mail');
+  $query->condition('ufd.status', 1);
+  $usersLoaded = $query->execute()->fetchAll();
+
+  $to = \Drupal::currentUser()->getEmail();
+  \Drupal::service('email_factory')->sendTypedEmail('sales_email_update', 'update', $to);
+
+  \Drupal::messenger()->addMessage("Sent email to current user");
+
+  }

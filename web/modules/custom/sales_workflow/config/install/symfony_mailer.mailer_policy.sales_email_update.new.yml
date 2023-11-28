@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - sales_workflow
+id: sales_email_update.new
+configuration:
+  email_body:
+    content:
+      value: |-
+        <h4>Quote generated</h4>
+        <p>Hello {{ userName }}</p>
+        <p>This is to notify you that new Sales Quote <a href="{{ contentUrl }}">{{ contentTitle }}</a> has been created.</p>
+        <p>Regards,</p>
+        <p>Sales Team</p>
+      format: email_html
+  email_subject:
+    value: 'Sales Quote generated {{ contentTitle }}'

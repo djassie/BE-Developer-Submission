@@ -17,10 +17,13 @@
     "require": {
         "composer/installers": "^2.0",
         "drupal/admin_toolbar": "^3.4",
+        "drupal/better_exposed_filters": "^6.0",
         "drupal/core-composer-scaffold": "^10.1",
         "drupal/core-project-message": "^10.1",
         "drupal/core-recommended": "^10.1",
+        "drupal/devel": "^5.1",
         "drupal/module_filter": "^4.0",
+        "drupal/symfony_mailer": "^1.4",
         "drush/drush": "^12.2"
     },
     "conflict": {
