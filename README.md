@@ -1,3 +1,10 @@
+### Project Import
+- Project Developed on Rocky Linux 9 (RPM Linux), Docker, DDEV
+
+- To Import - database `db.sql` also, `config`s can be imported, not necessary if database is imported
+- `ddev composer install`
+- `ddev import-db < db.sql`
+
 ### New Content Types Created
 
 ##### Sales
